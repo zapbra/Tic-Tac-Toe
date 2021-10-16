@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  font-family: Roboto;
+  position: relative;
+}
+
+header.header {
+  background-color: #fca311;
+  color: #000;
+  height: 150px;
+  text-align: center;
+  border-bottom: 3px solid #000;
+}
+
+header.header h1 {
+  font-size: 64px;
+  line-height: 150px;
+}
+
+.game-container {
+  position: relative;
+  display: grid;
+  grid-template-rows: 150px 150px 150px;
+  grid-template-columns: 150px 150px 150px;
+  margin: 3rem auto 0;
+  width: 450px;
+}
+
+.hover-state {
+  cursor: pointer;
+}
+
+.hover-state:hover {
+  background-color: #14213d;
+}
+
+.game-square {
+  line-height: 0.75;
+  text-align: center;
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  font-size: 10rem;
+}
+
+#reset {
+  width: 150px;
+  height: 75px;
+  margin: 3rem auto 0;
+  background-color: #000;
+  color: #fca311;
+  cursor: pointer;
+  text-align: center;
+  line-height: 75px;
+  border: #fca311 outset 5px;
+}
+
+#reset:active {
+  border-style: inset;
+}
+
+.place-win-middle {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.win-screen {
+  left: -450px;
+  top: 198px;
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background-color: #fff;
+  border: 2px solid #000;
+  padding-top: 5rem;
+  z-index: 1;
+  transition: left 2s ease-out, transform 2s ease-out;
+}
+
+.win-screen .win-text {
+  position: absolute;
+  width: 275px;
+  text-align: center;
+  animation: text-slide 5s linear infinite alternate;
+}
+
+.win-screen .win-text:nth-of-type(2) {
+  top: 200px;
+}
+
+.win-screen h1 {
+  font-size: 2.2rem;
+}
+
+@keyframes recolor {
+  0% {
+    color: red;
+  }
+  100% {
+    color: blue;
+  }
+}
+
+@keyframes text-slide {
+  0% {
+    left: 0px;
+    background-color: #fff;
+    color: black;
+  }
+  25% {
+    background-color: #000;
+    color: white;
+  }
+  50% {
+    background-color: #fff;
+    color: black;
+  }
+  75% {
+    background-color: #000;
+    color: white;
+  }
+  100% {
+    left: calc(100% - 275px);
+    background-color: #fff;
+    color: black;
+  }
+}
